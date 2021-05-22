@@ -1,8 +1,13 @@
 from lxml import etree
 
-### Ejercicio 1
-def Listarnombremonumentos(proyecto):
+def Listarnombremonumentos(monumentos):
     lista=[]
-    for monumentos in proyecto.xpath("//nombre/text()"):
+    for monumentos in monumentos.xpath("//nombre/text()"):
         lista.append(monumentos)
     return lista
+
+def ContarMonumentos(monumentos):
+    lista=[]
+    for monumentos in monumentos.xpath("//nombre/text()"):
+        lista.append(monumentos)
+    return len(lista)
