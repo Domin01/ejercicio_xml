@@ -8,7 +8,7 @@ menu="""
 2.- Contar el numero de monumentos
 3.- Dime una categoria y muestra todos los monumentos en esa categoria
 4.- Buscar un monumento y mostrar toda su informacion
-Opcion 5
+5.- Buscar todos los monumentos que empiezan por una cadena
 """
 print(menu)
 opcion=int(input("Elige una opción: "))
@@ -37,15 +37,21 @@ while opcion!=6:
         opcion=int(input("Elige una opción: "))
     
     if opcion==4:
-        busqueda=input("Dime el nombre del monumento para buscar: ")
+        busqueda=input("Dime el nombre del monumento para buscar informacion: ")
         informacion=MostrarInformacion(monumentos,busqueda)
         print("---------------------------------------------")
-        print(informacion)
+        lista=[]
+        for a in informacion:
+            for b in a:
+                lista.append(b)
+        for c in lista:
+            print(c)
+            
         opcion=int(input("Elige una opción: "))
     
     if opcion==5:
-
-        municipios=Listarnombremonumentos(proyecto)
+        busqueda=input("Escribe una cadena para filtrar: ")
+        municipios=BuscarCadena(monumentos,busqueda)
         for a in municipios:
             print(a)
         opcion=int(input("Elige una opción: "))
